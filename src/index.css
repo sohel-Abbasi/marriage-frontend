@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* PDF-safe overrides to avoid oklch() color issues with html2canvas */
+.pdf-safe,
+.pdf-safe * {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+  box-shadow: none !important;
+}
