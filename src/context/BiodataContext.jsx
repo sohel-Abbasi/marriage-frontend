@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const BiodataContext = createContext();
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://marriage-backend-delta.vercel.app/";
+  import.meta.env.VITE_API_URL || "https://marriage-backend-delta.vercel.app";
 
 export function BiodataProvider({ children }) {
   const [user, setUser] = useState(() => {
