@@ -2,7 +2,8 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const BiodataContext = createContext();
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://marriage-backend-delta.vercel.app";
+  import.meta.env.VITE_API_BASE_URL ||
+  "https://marriage-backend-delta.vercel.app/api";
 
 export function BiodataProvider({ children }) {
   const [user, setUser] = useState(() => {
@@ -32,10 +33,7 @@ export function BiodataProvider({ children }) {
           const data = await res.json();
           if (data?.biodata) {
             setBiodata(data.biodata);
-            localStorage.setItem(
-              "shaadiBiodata",
-              JSON.stringify(data.biodata),
-            );
+            localStorage.setItem("shaadiBiodata", JSON.stringify(data.biodata));
           }
         }
       } catch (error) {
